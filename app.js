@@ -59,7 +59,6 @@ class App {
   }
 
   configureStore() {
-    console.log(persistCombineReducers);
     const reducer = persistCombineReducers(this.config, { foo: this.reducer });
     this.store = createStore(
         reducer
@@ -99,7 +98,7 @@ appConfigs[2] = ({
     storage,
     version: 2,
     key: 'app',
-    whitelist: ['foo', '_persist'],
+    whitelist: ['foo'],
     migrate: createMigrate(migrations, { debug: true }),
     debug: true,
   },
@@ -124,7 +123,7 @@ appConfigs[3] = ({
     storage,
     version: 3,
     key: 'app',
-    whitelist: ['foo', '_persist'],
+    whitelist: ['foo'],
     migrate: createMigrate(migrations, { debug: true }),
     debug: true,
   },
