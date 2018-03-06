@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="http://unpkg.com/react@15.5.0/dist/react-with-addons.min.js"></script>
+    <script src="http://unpkg.com/react-dom@15.5.0/dist/react-dom.min.js"></script>
+    <script src="http://unpkg.com/redux@3.7.2/dist/redux.min.js"></script>
+    <script src="http://unpkg.com/react-redux@5.0.6/dist/react-redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux-persist/5.9.1/redux-persist.js"></script>
+    <script src="http://rawgit.com/mauron85/2eb37e2e3e5de6d947e2ea35df842b7e/raw/664fc6d2fc949ce37e18f4afeebb78b1cf927b8b/redux-persist-storage.js"></script>
+    <script src="./app.js"></script>
+
+    <div id="container">
+        <!-- This element's contents will be replaced with your code... -->
+    </div>
+
+</head>
+<body>
+<div id='root'>...</div>
+
+<input type="button" value="purge" onclick="purge()" /><br />
+<input type="button" value="app 1 run" onclick="run(1)" /><br />
+
+<input type="button" value="app 2 run" onclick="run(2)" />
+<input type="button" value="process" onclick="update(2)" /><br />
+
+<input type="button" value="app 3 run" onclick="run(3)" />
+<input type="button" value="process" onclick="update(3)" /><br />
+
+<h3>Using redux-persist migration demo</h3>
+<ol>
+    <li>Open index.htm in Google Chrome</li>
+    <li>Clean local storage: press "app 2 run", press "purge", reload page</li>
+    <li>Start app 1: press "app 1 run"</li>
+    <li>Update app: reload page</li>
+    <li>Start app 2: press "app 2 run". Migration 2 should be executed</li>
+    <li>Change state of app 2: press "process" near the "app 2 run" button</li>
+    <li>Update app: reload page</li>
+    <li>Start app 3: press "app 3 run". Migration 3 should be executed</li>
+</ol>
+
+</body>
+</html>
